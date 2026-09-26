@@ -24,13 +24,13 @@ Pinned to a tag, the same shape as other DSH bundles:
 
 ```powershell
 cd $DSH_HOME\profiles\desktop
-pnpm add "https://github.com/ccccqiang/dsh-relay-direct/archive/refs/tags/v0.1.0.tar.gz"
+pnpm add "https://github.com/ccccqiang/dsh-relay-direct/archive/refs/tags/v0.1.1.tar.gz"
 ```
 
 Then add it to the profile manifest - **both** places, in `profiles/desktop/package.json`:
 
 ```json
-"dependencies": { "dsh-relay-direct": "https://github.com/.../v0.1.0.tar.gz" },
+"dependencies": { "dsh-relay-direct": "https://github.com/.../v0.1.1.tar.gz" },
 "dsh": { "profile": { "bundles": [ "...", "dsh-relay-direct" ] } }
 ```
 
@@ -68,7 +68,7 @@ console.log(route("https://example.com/x"));            // PROXY
 
 **No `peerDependencies` on purpose.** `evaluatePluginCompatibility` returns `undefined` when a manifest declares none, which skips the version pre-flight entirely. Declaring `@deepseek-ai/dsh` peers would deny the bundle after every DSH upgrade.
 
-**`lib/index.js` is a placeholder.** Nothing imports it; it exists so the package has an entry point at all. The real code is `lib/relay-direct.mjs`, mounted by `cordis.patch.yml`.
+**`lib/relay-direct.mjs` is the entry, declared as both `main` and `exports`, so the bundle's patch row can name the package instead of a path.
 
 **Relative module names resolve against the patch file's own directory** and are rewritten to absolute `file:///` URLs on load, so the entry module must stay inside the package.
 

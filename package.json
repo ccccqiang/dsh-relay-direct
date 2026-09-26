@@ -1,6 +1,6 @@
 {
   "name": "dsh-relay-direct",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pin this profile's LLM relay endpoints, read from the llm-pi-ai provider config, to a direct connection so a VPN client's HTTP(S)_PROXY does not route them into a tunnel.",
   "type": "module",
   "license": "MIT",
@@ -28,5 +28,10 @@
     "bundle": {
       "patch": "./cordis.patch.yml"
     }
+  },
+  "main": "lib/relay-direct.mjs",
+  "exports": {
+    ".": "./lib/relay-direct.mjs",
+    "./package.json": "./package.json"
   }
 }

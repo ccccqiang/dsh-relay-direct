@@ -1,9 +1,11 @@
 # dsh-relay-direct bundle patch: one insert, so the plugin manager can
 # address the row by id and toggle it from the UI.
 #
-# A bundle patch resolves a relative module name against this file's own
-# directory, so the entry module lives beside it under lib/.
+# The row's `name` is a bare package name, resolved through the profile's
+# node_modules exactly like every other bundle here. The entry it lands on is
+# this package.json's `main` / `exports` - which is why both point straight at
+# the real module instead of at a placeholder.
 
 - insert:
     - id: relay-direct
-      name: "./lib/relay-direct.mjs"
+      name: "dsh-relay-direct"
