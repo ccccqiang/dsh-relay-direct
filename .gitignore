@@ -1,0 +1,7 @@
+# Nothing here is generated: the bundle is these files.
+# node_modules/.env are only relevant if you develop this in place.
+node_modules/
+*.log
+.env
+.DS_Store
+Thumbs.db
