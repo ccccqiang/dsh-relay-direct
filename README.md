@@ -24,13 +24,13 @@ Pinned to a tag, the same shape as other DSH bundles:
 
 ```powershell
 cd $DSH_HOME\profiles\desktop
-pnpm add "https://github.com/ccccqiang/dsh-relay-direct/archive/refs/tags/v1.0.0.tar.gz"
+pnpm add "https://github.com/ccccqiang/dsh-relay-direct/archive/refs/tags/v0.1.0.tar.gz"
 ```
 
 Then add it to the profile manifest - **both** places, in `profiles/desktop/package.json`:
 
 ```json
-"dependencies": { "dsh-relay-direct": "https://github.com/.../v1.0.0.tar.gz" },
+"dependencies": { "dsh-relay-direct": "https://github.com/.../v0.1.0.tar.gz" },
 "dsh": { "profile": { "bundles": [ "...", "dsh-relay-direct" ] } }
 ```
 
