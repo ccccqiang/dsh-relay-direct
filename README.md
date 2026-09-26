@@ -1,5 +1,7 @@
 # dsh-relay-direct
 
+English | [简体中文](README.zh-CN.md)
+
 Keep your LLM relay (中转站) reachable when a VPN client has hijacked your proxy environment.
 
 A [DSH](https://github.com/deepseek-ai) profile bundle. Ships one cordis entry that re-installs the outbound proxy policy with your relay hosts in `NO_PROXY`.
